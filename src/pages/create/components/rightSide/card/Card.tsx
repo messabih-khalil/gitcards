@@ -27,7 +27,7 @@ const Card = () => {
         {/* image */}
         {image && (
           <div
-            className={`w-full  h-[150px] ${isHorizontal && 'w-[160px] mr-2'} `}
+            className={`h-[150px] ${isHorizontal && 'w-[160px] mr-2'} `}
           >
             <CardImage
               value={image}
