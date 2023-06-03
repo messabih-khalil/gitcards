@@ -35,7 +35,7 @@ const LeftBox = () => {
         {/* Header Description */}
         <h1 className="font-mono font-bold text-[45px] sm:text-[60px]  leading-tight mt-7 text-center lg:text-start">
           Effortless Project Card
-          <br />
+          {/* <br /> */}
           Creation for GitHub Profile
         </h1>
         <p className="font-mono text-gray-600 text-center lg:text-start  text-[16px] sm:text-[22px] mt-7">
