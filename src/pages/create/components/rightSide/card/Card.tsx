@@ -18,7 +18,7 @@ const Card = () => {
       <div
         className={`h-auto p-4 rounded-xl ${
           isHorizontal && 'flex'
-        }  w-[270px] ${isHorizontal && 'w-[440px]'} `}
+        }  ${!isHorizontal && 'w-[270px]'} ${isHorizontal && 'w-[440px]'} `}
         style={{
           background: cardColor,
         }}
