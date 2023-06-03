@@ -114,10 +114,14 @@ const RightSide = () => {
 
   return (
     <>
-      <section className="bg-gray-50 border-l-2 border-gray-100 w-full h-[1000px] lg:h-full  md:my-0 md:lg:w-7/12 py-5 px-5 overflow-scroll flex items-center justify-center font-mono relative">
+      <section className="bg-gray-50 border-l-2 border-gray-100 w-full h-[100vh] lg:h-full  md:my-0 md:lg:w-7/12 py-5 px-5 md:overflow-scroll flex items-center justify-start font-mono relative flex-col">
+        {/* Code Block */}
+        <div className=" w-[90%] lg:w-[80%]">
+          <CodeBlock />
+        </div>
         {/* Card */}
         <motion.div
-          className="z-10 scale-75  sm:scale-125  top-[300px] absolute"
+          className="z-10 scale-75 lg:scale-100 mt-[10%]"
           initial={{
             opacity: 0,
           }}
@@ -131,19 +135,17 @@ const RightSide = () => {
           <Card />
         </motion.div>
 
-        {/* Code Block */}
-        <div className="absolute w-[90%] lg:w-[80%] top-11 z-0">
-          <CodeBlock />
-        </div>
-        {/* Generate Button */}
-        <GenerateButton handleClick={upload}>Get Card</GenerateButton>
         {/* Color Picker */}
-        <div className="absolute scale-[0.8] xs:scale-[.9] z-50 bottom-[500px] right-80">
+        <div className="absolute scale-[0.5] lg:scale-[.9] z-50 bottom-[300px] right-[] lg:bottom-[500px] lg:right-72">
           <MColorPicker />
         </div>
 
         <div className="scale-0">
           <div id="handleDiv"></div>
+        </div>
+        <div className="h-full w-full flex flex-col items-center justify-end ">
+          {/* Generate Button */}
+          <GenerateButton handleClick={upload}>Get Card</GenerateButton>
         </div>
       </section>
     </>
