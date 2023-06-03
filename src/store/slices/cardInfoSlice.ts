@@ -9,7 +9,7 @@ const cardInfoSlice = createSlice({
     title: '',
     stack: '',
     urlLink: '',
-    cardColor: '#1E2022',
+    cardColor: '#000000',
     titleColor: '#F0F5F9',
     stackBorderColor: '#52616B',
     stackBackgroundColor: '#52616B',
