@@ -5,7 +5,16 @@
 @tailwind components;
 @tailwind utilities;
 
-/*  */
+/* Hide scroll bars for all elements */
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer and Edge */
+}
+
+/* Hide scroll bars for WebKit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  display: none;
+}
 
 .home-button {
   position: relative;
@@ -179,7 +188,6 @@
   --tooltip-padding-x: 7px;
   --tooltip-padding-y: 7px;
   --tooltip-offset: 8px;
-
 }
 
 .copy {
