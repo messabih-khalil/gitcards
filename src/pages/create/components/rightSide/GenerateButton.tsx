@@ -12,11 +12,11 @@ const GenerateButton: React.FC<{
       onClick={() => handleClick()}
       disabled={isLoading || (!title && !stack)}
       type="button"
-      className={` bg-black text-white  ${
+      className={` bg-black text-white z-20 ${
         (isLoading || (!title && !stack)) && 'bg-gray-400 text-black'
       } ${isLoading && 'cursor-wait'} ${
         !title && !stack && 'cursor-not-allowed'
-      } font-medium rounded-lg text-xl px-20 py-4 text-center mr-2   inline-flex items-center absolute bottom-10 cursor-pointer`}
+      } font-medium rounded-lg text-xl px-20 py-4 text-center mr-2   inline-flex items-center cursor-pointer mt-[10%]`}
       initial={{
         y: '100vh',
       }}
