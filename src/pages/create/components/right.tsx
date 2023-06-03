@@ -2,7 +2,7 @@ import React from 'react';
 import CodeBlock from './rightSide/CodeBlock';
 import ProcessImage from '@/utils/processImage';
 import GenerateButton from './rightSide/GenerateButton';
-import { setGenerateUrl, setIsLoading } from '@/store';
+import { setConfigFromLocalState, setGenerateUrl, setIsLoading } from '@/store';
 import { useDispatch, useSelector } from 'react-redux';
 import Card from './rightSide/card/Card';
 import MColorPicker from './rightSide/card/ColorPicker';
@@ -44,6 +44,14 @@ const RightSide = () => {
     stackBackgroundColor,
     stackTextColor,
   ]);
+
+  React.useEffect(() => {
+    dispatch(
+      setConfigFromLocalState(
+        JSON.parse(localStorage.getItem('config') as string)
+      )
+    );
+  }, [dispatch]);
 
   const removeDivs = () => {
     const cardBody = document.getElementById('cardBody');
