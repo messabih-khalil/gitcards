@@ -11,7 +11,7 @@ const Home = () => {
       <Head>
         <title>GitCards</title>
       </Head>
-      <section className="w-full pb-5 lg:pb-0 flex justify-center mt-10 lg:mt-72 lg:pl-14 gap-20 ">
+      <section className="w-full pb-5  flex justify-center mt-[15%] lg:pl-14 gap-20">
         {/* Left Div */}
         <LeftBox />
         {/* Right Div */}
