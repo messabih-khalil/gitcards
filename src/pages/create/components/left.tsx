@@ -95,7 +95,7 @@ const LeftSide = () => {
               <Input
                 type="text"
                 placeHolder="html , css , js , ..."
-                label="Project Stack :"
+                label="Project Stack : * Separate the stack with a comma. *"
                 value={stack}
                 handleOnChange={setStack}
               />
