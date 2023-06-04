@@ -9,6 +9,11 @@ import MColorPicker from './rightSide/card/ColorPicker';
 import { motion } from 'framer-motion';
 const RightSide = () => {
   const dispatch = useDispatch();
+
+  // Get The State Of Card Style For Resizing
+  const isHorizontal = useSelector((state: any) => state.card.IsHorizontal);
+
+  // Get And Set Colors From Local Storage
   const {
     cardColor,
     titleColor,
@@ -81,7 +86,10 @@ const RightSide = () => {
   // Upload Image
   const upload = async () => {
     dispatch(setIsLoading(true));
-    const imageUploader = new ProcessImage(removeDivs() as HTMLElement);
+    const imageUploader = new ProcessImage(
+      removeDivs() as HTMLElement,
+      isHorizontal ? 440 : 270
+    );
     // Convert div into image and compress it
     const cmprsImage = await imageUploader.compressImage();
 
