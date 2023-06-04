@@ -1,6 +1,6 @@
 import imageCompression from 'browser-image-compression';
 import * as htmlToImage from 'html-to-image';
-
+import Resizer from 'react-image-file-resizer';
 export default class ProcessImage {
   imageFile?: any;
 
@@ -9,7 +9,7 @@ export default class ProcessImage {
 
   imgUrl?: string;
 
-  constructor(public nodeDiv: any) {}
+  constructor(public nodeDiv: any, public size: number) {}
 
   convertBase64ToFileImage(base64Image: any, filename: any) {
     const arr = base64Image.split(',');
@@ -25,6 +25,25 @@ export default class ProcessImage {
     return new File([u8arr], filename, { type: mime });
   }
 
+  // Resized Image
+  resizeFile(file: any): any {
+    return new Promise(resolve => {
+      Resizer.imageFileResizer(
+        file,
+        this.size,
+        this.size,
+        'PNG',
+        100,
+        0,
+        uri => {
+          resolve(uri);
+        },
+        'file',
+        this.size,
+        this.size,
+      );
+    });
+  }
   // compress Image
 
   async compressImage() {
@@ -33,14 +52,14 @@ export default class ProcessImage {
     const file: any = this.convertBase64ToFileImage(image64, 'image.png');
 
     const options = {
-      initialQuality: 0.6,
-      maxWidthOrHeight: 300,
+      initialQuality: 0.7,
+      maxWidthOrHeight: 405,
     };
+    const resizedImage = await this.resizeFile(file);
+    console.log(resizedImage);
 
-    this.imageFile = await imageCompression(file, options);
+    this.imageFile = await imageCompression(resizedImage, options);
 
     return this.imageFile;
   }
-
-  // Send Request
 }
