@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import CardAlignment from './leftSide/CardAlignment';
 import { setTitle, setStack, setUrlLink, setImage } from '@/store';
 import { motion } from 'framer-motion';
+import GithubStart from '@/shared/GithubStart';
 
 const LeftSide = () => {
   const { urlLink, title, stack, image } = useSelector(
@@ -51,7 +52,9 @@ const LeftSide = () => {
 
   return (
     <>
-      <div className="w-full lg:w-5/12 py-5 px-5 overflow-auto">
+      <div className="w-full lg:w-5/12 py-5 px-5 overflow-auto relative">
+        {/* Github Star */}
+        <GithubStart/>
         {/* Logo */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -117,6 +120,8 @@ const LeftSide = () => {
             </motion.div>
           </motion.div>
         </motion.div>
+
+        
       </div>
     </>
   );
