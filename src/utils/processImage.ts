@@ -34,6 +34,7 @@ export default class ProcessImage {
 
     const options = {
       initialQuality: 0.6,
+      maxWidthOrHeight: 300,
     };
 
     this.imageFile = await imageCompression(file, options);
