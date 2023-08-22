@@ -52,7 +52,7 @@ export default class ProcessImage {
     const file: any = this.convertBase64ToFileImage(image64, 'image.png');
 
     const options = {
-      initialQuality: 1,
+      // initialQuality: 1,
       maxWidthOrHeight: 405,
     };
     const resizedImage = await this.resizeFile(file);
