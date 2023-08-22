@@ -33,7 +33,7 @@ export default class UploadImage {
     const file: any = this.convertBase64ToFileImage(image64, 'image.png');
 
     const options = {
-      initialQuality: 0.6,
+      initialQuality: 0.8,
     };
 
     this.imageFile = await imageCompression(file, options);
